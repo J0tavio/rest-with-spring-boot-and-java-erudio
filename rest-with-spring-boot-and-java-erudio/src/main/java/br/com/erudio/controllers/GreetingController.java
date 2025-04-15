@@ -1,6 +1,6 @@
 package br.com.erudio.controllers;
 
-import br.com.erudio.model.Greeting;
+import br.com.erudio.models.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +13,7 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    // http://localhost:8888/greeting?name=Joao
     @RequestMapping("/greeting")
     public Greeting greeting(
             @RequestParam(value = "name", defaultValue = "World")
