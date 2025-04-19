@@ -13,5 +13,6 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        # Use the MySQL dialect for Hibernate
         format_sql: true
+    open-in-view: false # Disable the Open Session in View pattern
