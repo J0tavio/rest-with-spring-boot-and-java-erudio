@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController()
-@RequestMapping("person")
+@RequestMapping("/person")
 public class PersonController {
 
     @Autowired
@@ -18,7 +18,7 @@ public class PersonController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public PersonModel findById(@PathVariable("id") String id) {
+    public PersonModel findById(@PathVariable("id") Long id) {
         return personService.findById(id);
     }
 
@@ -39,7 +39,7 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("id") String id) {
+    public void delete(@PathVariable("id") Long id) {
         personService.delete(id);
     }
 
